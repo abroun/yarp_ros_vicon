@@ -3,7 +3,7 @@ This is a rather convoluted way of getting a VICON system to work with either RO
 The basic outline of the system is
 
 * You have a VICON system running on Windows
-* A windows program called --- talks to VICON via the --- API and streams data to a YARP server
+* A windows program called simpleViconLink talks to VICON via the VICON Nexus API and streams data to a YARP server
 * The ROS node yarp_ros_vicon talks to the YARP server, and translates the VICON data to ROS by writing transforms to the tf system
 
 If this seems a bit yucky to you, then please use any useful bits here to write a better system, or ignore it completely. There were 'reasons' why things were done as they were, which may, or may not have been reasonable reasons.
@@ -29,7 +29,7 @@ yarp conf YARP_SERVER_IP_ADDRESS 10000
 
 * Run Vicon Tracker on the Windows PC
 * Run simpleViconLink on the Windows PC.
-* Things may crash as the NexusAPI seems to be a bit flaky when it comes to initial connections. Follow the troubleshooting instructions given by simpleViconLink
+* Things may crash as the Nexus API seems to be a bit flaky when it comes to initial connections. Follow the troubleshooting instructions given by simpleViconLink
 * On the ROS PC run
 
 ```
