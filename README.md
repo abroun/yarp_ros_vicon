@@ -19,11 +19,13 @@ If this seems a bit yucky to you, then please use any useful bits here to write 
 
 ```
 yarp server
+```
 
 * Tell the Windows PC where the YARP server is by running the following on the command line
 
 ```
 yarp conf YARP_SERVER_IP_ADDRESS 10000
+```
 
 * Run Vicon Tracker on the Windows PC
 * Run simpleViconLink on the Windows PC.
@@ -32,6 +34,7 @@ yarp conf YARP_SERVER_IP_ADDRESS 10000
 
 ```
 rosrun yarp_ros_vicon raw_vicon_object_broadcaster.py
+```
 
 * If you open up RVIZ, you should be able to see VICON transforms in the vicon tf frame
 * Edit raw_vicon_object_broadcaster.py to set the relative pose of your base tf link (in our case it was table_link). Ideally this would be set by a command line parameter.
@@ -53,6 +56,7 @@ cmake ..
 make
 sudo make install
 sudo ldconfig
+```
 
 ## Installing the YARP Python Bindings
 
@@ -65,18 +69,23 @@ cd build
 cmake -D CREATE_PYTHON=ON ..
 make
 sudo make install
+```
 
-## Telling YARP about the BERT2 YARP Network
+## Telling YARP about an existing YARP Network
 
-The YARP server for BERT2 runs on the YARP machine. We need to tell the local YARP installation the IP address and network port of this server. You can do this by running
+We need to tell the local YARP installation the IP address and network port of the YARP server. You can do this by running
 
-yarp conf 164.11.73.3 10000
+```
+yarp conf SERVER_IP_ADDRESS SERVER_PORT
+```
 
-Please Note: The IP address of the YARP master is only 'fixed' in the sense that the UWE routers give out IP addresses on a fairly long lease. If the YARP master computer is switched off for more than a couple of days then its IP address may change. In this case you will need to run 'yarp conf' on all of the BERT computers with the new IP address. Also, please update the computer details page. To check that YARP is installed and configured correctly, start up the YARP server by clicking on the YARP shortcut on the desktop of the YARP machine. Then run
+Then run
 
+```
 yarp name list
+```
 
-in a terminal window on your Ubuntu machine. If successful you should see a list of the active YARP ports.
+in a terminal window on your machine. If successful you should see a list of the active YARP ports.
 
 
 
