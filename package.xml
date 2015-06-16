@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package>
+  <name>yarp_ros_vicon</name>
+  <version>0.1.0</version>
+  <description>
+    This package provides a node that broadcasts the transforms for objects viewed by a VICON system
+  </description>
+
+  <maintainer email="abroun@addersoftware.co.uk">Alan Broun</maintainer>
+
+  <!-- One license tag required, multiple allowed, one license per tag -->
+  <!-- Commonly used license strings: -->
+  <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>tf</build_depend>
+  
+  <run_depend>rospy</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>tf</run_depend>
+  
+</package>
